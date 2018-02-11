@@ -88,7 +88,7 @@ $ git push origin master
 ## atom配置
 编辑>Preferences>安装（快捷键Ｃtrl+，）
 搜索并安装
-* git-plus
+* 
 * markdown-preview-plus
 * markdown-writer
 * platformio-ide-terminal
