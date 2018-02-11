@@ -88,19 +88,17 @@ $ git push origin master
 ## atom配置
 编辑>Preferences>安装（快捷键Ｃtrl+，）
 搜索并安装
-* 
 * markdown-preview-plus
 * markdown-writer
 * platformio-ide-terminal
 ## atom 使用
 * Ｃtrl+shift+Ｍ 可以打开markdown预览界面  
 * atom下底左端+号可打开terminal  
-* 右下角可打开git界面  
 * atom左边中部鼠标移向的时候会有箭头，打开project面板（文件目录）右击选择Ａdd project folder并选择你的username.github.io文件夹，atom会自动识别
   - 新建的文件会显示成绿色
   - 修改的文件会显示成黄色
   - 在atom界面中提交更改
-    - 改新建或修改的文件或文件夹上右击选择git add+commit 在弹出的commit界面上输入你的注释（注意要输入以引号包括的字符串）然后保存Ｃtrl+Ｓ
+    - 右下角可打开git面板，上面是修改的文件，
     - 在终端中git push origin master提交到github
 
 
