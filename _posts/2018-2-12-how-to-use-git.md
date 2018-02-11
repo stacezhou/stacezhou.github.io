@@ -24,7 +24,12 @@ tag: atom，git
 ## 安装必要的软件
 1. 安装git；  ubuntu终端：sudo apt-get install git  
 windows： 去git官网下载安装包，安装时一直next保持默认就好。启动git bash，后面的shell命令（以$开头）均在git bash中执行。
-
+1. git配置：
+```shell
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "Your Name"
+```
+这个显示为修改代码的作者标识
 2. 安装atom： 官网上下载安装包直接安装即可
 
 ## 把创建的repository克隆到本地
