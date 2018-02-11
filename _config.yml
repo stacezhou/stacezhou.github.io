@@ -3,13 +3,13 @@ name: Stace`s Blog
 email: stacezhou@gmail.com
 author: stacezhou
 url: http://stacezhou.github.io
-resume_site: http://www.hifreud.com/Resume.io/
+#resume_site:
 github: https://github.com/stacezhou
 baseurl: ""
-description: Actually, less is more!
+description:
 meta_description: 周辉;个人博客;
-motto: It's our wits that make us men.
-banner: 学而不思则罔，思而不学则殆。
+motto:
+banner: 
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
@@ -22,4 +22,4 @@ github_username: stacezhou
 # Build settings
 markdown: kramdown
 
-baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae 
+baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae
