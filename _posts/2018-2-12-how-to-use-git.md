@@ -14,15 +14,17 @@ tag: atom，git
 {:toc}
 
 
-这篇笔记记录了我用github pages写博客的过程。环境是ubuntu17.10,windows还没试过，后续在试试。编辑器用的github自家的atom，漂亮，和git搭配的很好。
+这篇笔记记录了我用github pages写博客的过程。 ~~环境是ubuntu17.10, windows还没试过，后续在试试~~ 。编辑器用的github自家的atom，漂亮，和git搭配的很好。
 ##  github准备
 1. 首先注册一个github账户
 2. 然后在github页面右上角+号，New repository新建 **版本库(repository)**,版本库可以看作一个项目的一个大目录。这里我们用github写博客，版本库的名称要设置成 *username*.github.io 用自己的用户名换掉 *username*
 
 > 这篇文章后的 **所有** username全都替换成你自己的用户名
 
-* 安装必要的软件
-1. 安装git；  ubuntu终端：sudo apt-get install git
+## 安装必要的软件
+1. 安装git；  ubuntu终端：sudo apt-get install git  
+windows： 去git官网下载安装包，安装时一直next保持默认就好。启动git bash，后面的shell命令（以$开头）均在git bash中执行。
+
 2. 安装atom： 官网上下载安装包直接安装即可
 
 ## 把创建的repository克隆到本地
