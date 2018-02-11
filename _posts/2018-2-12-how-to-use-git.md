@@ -84,7 +84,7 @@ $ git push origin master
 ```shell
 $ git add 2018-9-14-happy-birthday.md
 $ git commit -m "your commit"
-$ git push origin master #git push 命令时工作目录必须是项目（我们这是username.github.io)
+$ git push origin master #git push 命令时工作目录必须是项目（我们这是username.github.io)s
 ```
 
 ## atom配置
