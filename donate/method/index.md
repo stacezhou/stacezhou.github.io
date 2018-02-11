@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 赞助方式
+title: 赞助方式哈哈哈
 permlink: /method
 ---
 

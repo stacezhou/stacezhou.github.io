@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 打赏
-header: 打赏
+title: 打赏哈哈哈
+header: 打赏嘿嘿嘿
 ---
 
 您的支持是作者写作最大的动力！
@@ -47,4 +47,3 @@ header: 打赏
 <br>
 
 <hr>
-
