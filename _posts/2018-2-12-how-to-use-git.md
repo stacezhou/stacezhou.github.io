@@ -92,9 +92,13 @@ $ git push origin master
 搜索并安装
 * markdown-writer
 * platformio-ide-terminal
+  - 设置>扩展，找到platformio-ide-terminal（搜索ide即可），修改shell override项为
+> C:\Program Files\Git\git-cmd.exe
+
+  - 并选择working directory为Home
+* atom下底左端+号可打开终端terminal  
 ## atom 使用
 * Ctrl+shift+Ｍ 可以打开markdown预览界面  
-* atom下底左端+号可打开终端erminal  
 * atom左边中部鼠标移向的时候会有箭头，打开project面板（文件目录）右击选择Ａdd project folder并选择你的username.github.io文件夹，atom会自动识别
   - 新建的文件会显示成绿色
   - 修改的文件会显示成黄色
