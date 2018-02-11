@@ -66,7 +66,8 @@ $ git push origin master #把本地的修改同步到github上
 可以先用我的试试，也可以从网络上下载jekyll主题模板。
 ```shell
 $ git clone https://github.com/stacezhou/stacezhou.github.io
-##修改stacezhou.github.io文件夹下大的_config.yml
+
+修改stacezhou.github.io文件夹下大的_config.yml，否则你把我的名字都抄过去了
 ```
 然后把stacezhou.github.io文件夹下的所有文件复制到你自己的username.github.io下面
 ## 上传到github服务器上
@@ -84,7 +85,7 @@ $ git push origin master
 ```shell
 $ git add 2018-9-14-happy-birthday.md
 $ git commit -m "your commit"
-$ git push origin master #git push 命令时工作目录必须是项目（我们这是username.github.io)s
+$ git push origin master #git push 命令时工作目录必须是项目（我们这是username.github.io）
 ```
 
 ## atom配置
