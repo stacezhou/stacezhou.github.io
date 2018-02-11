@@ -24,6 +24,8 @@ tag: atom，git
 ## 安装必要的软件
 1. 安装git；  ubuntu终端：sudo apt-get install git  
 windows： 去git官网下载安装包，安装时一直next保持默认就好。启动git bash，后面的shell命令（以$开头）均在git bash中执行。
+> git bash相当于linux shell环境，默认当前目录是windows当前用户目录，在C盘用户目录下
+
 1. git配置：
 ```shell
 $ git config --global user.email "you@example.com"
@@ -88,11 +90,10 @@ $ git push origin master
 ## atom配置
 编辑>Preferences>安装（快捷键Ｃtrl+，）
 搜索并安装
-* markdown-preview-plus
 * markdown-writer
 * platformio-ide-terminal
 ## atom 使用
-* Ｃtrl+shift+Ｍ 可以打开markdown预览界面  
+* Ctrl+shift+Ｍ 可以打开markdown预览界面  
 * atom下底左端+号可打开终端erminal  
 * atom左边中部鼠标移向的时候会有箭头，打开project面板（文件目录）右击选择Ａdd project folder并选择你的username.github.io文件夹，atom会自动识别
   - 新建的文件会显示成绿色
