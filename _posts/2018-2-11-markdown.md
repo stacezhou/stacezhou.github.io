@@ -15,15 +15,15 @@ tag: markdown
 
 
 
-#github markdown 语法
+# github markdown 语法
 
 **目录（粗体）**
 ~~删除线~~
 @stacezhou
-##标题
-######六级标题
+## 标题
+###### 六级标题
 
-##列表
+## 列表
 * Item
 * Item
   - Item
@@ -35,20 +35,20 @@ tag: markdown
 2. 有序列表
 3. 有序列表
 
-##图片
+## 图片
 ![github logo](logo.png)
 
-##超链接
+## 超链接
 https://stacezhou.github.io
 
 [mySite](https://stacezhou.github.io)
 
-##引用
+## 引用
 一只猫说过：
 > 你个背时猪儿变的。
 > 略略略
 
-##代码块
+## 代码块
     #include<stdio.h>
 
 *或者（斜体）*
