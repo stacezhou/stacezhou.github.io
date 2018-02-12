@@ -3,7 +3,7 @@ layout: post
 #标题配置
 title: atom+git+github写博客
 #时间配置
-date:   2018-2-12 01:00:00 +0800
+date:   2018-2-12
 #大类配置
 categories: 笔记
 #小类配置

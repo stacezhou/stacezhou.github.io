@@ -3,7 +3,7 @@ layout: post
 #标题配置
 title:  github markdown 语法
 #时间配置
-date:   2018-02-11 
+date:   2018-02-11
 #大类配置
 categories: document
 #小类配置
@@ -15,7 +15,6 @@ tag: markdown
 
 
 
-# github markdown 语法
 
 一次回车 = 空格
 两次回车 = 分段
