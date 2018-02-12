@@ -2,7 +2,6 @@
 layout: post
 #标题配置
 title:  github markdown 语法
-#时间配置
 #大类配置
 categories: document
 #小类配置
