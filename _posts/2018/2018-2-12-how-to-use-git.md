@@ -60,6 +60,7 @@ $ git add your_filename1 #把你修改的文件提交到暂存区
 $ git add your_filename2 #可以连续提交多个，甚至文件夹
 $ git commit -m "your_commit" #把暂存区的修改过的文件提交到版本库，并把本次操作记录为“your_commit”
 $ git push origin master #把本地的修改同步到github上
+$ git pull origin master #把github上的修改同步到本地
 ```
 
 ## 下载jekyll模板
