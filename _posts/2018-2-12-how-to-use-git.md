@@ -41,7 +41,12 @@ $ git push origin master  #将本地修改提交到github服务器
 可能会有延迟，等一会刷新就能看到Hello World博客啦
 
 ## 下载jekyll模板
-
+可以先用我的试试，也可以从网络上下载jekyll主题模板。
+```shell
+$ git clone https://github.com/stacezhou/stacezhou.github.io
+##修改stacezhou.github.io文件夹下大的_config.yml
+```
+然后把stacezhou.github.io文件夹下的所有文件复制到你自己的username.github.io下面
 ## 上传到github服务器上
 ```shell
 $ cd username.github.io
@@ -53,4 +58,8 @@ $ git push origin master
 
 ## 写一篇博客
 模板一般都会有说明：一般都是在文件夹
- username.github.io/_posts文件夹下添加一个md文件，名称类似2018-9-14-happy-birthday.md 
+username.github.io/_posts 文件夹下添加一个md文件，名称类似2018-9-14-happy-birthday.md
+
+## 参考：
+[如何快速搭建自己的github.io博客](http://blog.csdn.net/walkerhau/article/details/77394659)  
+[写作环境搭建(git+github+markdown+jekyll)](https://site.douban.com/196781/widget/notes/12161495/note/264946576/)  
