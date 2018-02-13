@@ -86,3 +86,6 @@ tag: Html，笔记
 * frame input param
 * DOCTYPE *isindex*
 * *basefont*
+
+## 属性
+* style属性：改变所有ＨＴＭＬ元素样式的通用方法
