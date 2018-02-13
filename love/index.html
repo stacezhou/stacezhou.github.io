@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html xml:lang="zh"><head><meta  charset=UTF-8">
+<title>PIGANDCAT</title>
+<script  src="./Our Story of &amp; love_files/jquery.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex-parser.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex-jit.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex-builderbase.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex-async.js"></script>
+<script  src="./Our Story of &amp; love_files/jscex-async-powerpack.js"></script>
+<script  src="./Our Story of &amp; love_files/functions.js" charset="utf-8"></script>
+<script  src="./Our Story of &amp; love_files/love.min.js" charset="utf-8"></script>
+
+<style>
+
+#wrap{position:relative;margin:0 auto;width:1100px;height:680px;margin-top:10px;}
+#text{width:400px;height:425px;left:60px;top:80px;position:absolute;}
+#code{display:none;font-size:16px;}
+#clock-box {position:absolute;left:60px;top:550px;font-size:28px;display:none;}
+#clock-box a {font-size:28px;text-decoration:none;}
+#clock{margin-left:48px;}
+#clock .digit {font-size:64px;}
+#canvas{margin:0 auto;width:1100px;height:680px;} 
+
+.hand{cursor:pointer;}
+.say{margin-left:5px;}
+.space{margin-right:150px;}
+
+
+html,body {
+	margin:0; 
+	overflow:hidden;
+	width:100%;
+	height:100%;
+	cursor:default;
+	font-size:14px;
+	font-family:'微软雅黑','宋体',sans-serif;
+	color:#231F20;
+	background:black;
+	background:linear-gradient(to bottom,#000000 0%,#5788fe 100%);
+}
+.filter {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	background:#fe5757;
+	animation:colorChange 30s ease-in-out infinite;
+	animation-fill-mode:both;
+	mix-blend-mode:overlay;
+}
+@keyframes colorChange {
+	0%,100% {
+	opacity:0;
+}
+50% {
+	opacity:.9;
+}
+}
+.landscape {
+	position:absolute;
+	bottom:0px;
+	left:0;
+	width:100%;
+	height:100%;
+	background-image:url(https://openclipart.org/image/2400px/svg_to_png/250847/Trees-Landscape-Silhouette.png);
+	
+background-image:url('http://www.jq22.com/css/img/xkbg.png');
+	background-size:1000px 250px;
+	background-repeat:repeat-x;
+	background-position:center bottom;
+}
+</style>
+
+
+</head><body>
+<audio autoplay="autoplay">
+<source src="../stacezhou.github.io/music/vf.mp3"audio/mp3" /></audio>
+
+<div class="landscape"></div>
+<div class="filter"></div>
+
+<div id="main">
+	<div id="wrap">
+             	<div id="text">
+				<div id="code">
+			        	<span class="say"> 不知不觉我们已经在一起这么久了</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 我们还记得我们在一起的那个夜晚 </span><br>
+					<span class="say"> </span><br>
+                     			<span class="say"> 刚认识的时候就如见故人, 或许是缘分，或许是注定的。</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 这一切太美妙了，像伏笔铺出的美文，如巧合演奏的天籁</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 谢谢你在我最困难的时候不离不弃，包容我，呵护我，爱我，让我体会从未的温柔</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 虽然在一起的时候，你经常凶我。可是你撒娇的样子也好可爱，我好喜欢。</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 我也老有一些坏毛病。。。惹你生气。。</span><br>
+					<span class="say"> </span><br>
+			        	<span class="say"> 但俩个人在一起，就这样，也好幸福。</span><br>
+                        		<span class="say"> </span><br>
+                        		<span class="say"> ..我永远的猫咪..</span><br>
+					<span class="say"> </span><br>
+                        		<span class="say"><span class="space"></span>情人节快乐！</span>
+			        </div>
+                </div>
+                <div id="clock-box">
+                    猪猪<span class="STYLE1">和</span>猫猫<span class="STYLE1">已经相爱了</span>
+                	<div id="clock"></div>
+		</div>
+                <canvas id="canvas" width="2100" height="680"></canvas>
+		<canvas id="canvas2" width="2100" height="680"></canvas>
+	</div>
+</div>
+
+
+    <script>
+    (function(){
+        var canvas = $('#canvas');
+
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;
+        }
+
+        var width = canvas.width();
+        var height = canvas.height();
+
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]]
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
+
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
+
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0;
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
+
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
+
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
+
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
+
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
+
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
+
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
+
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2016, 8,26); 			//时间年月日
+		    together.setHours(1);						//小时
+		    together.setMinutes(1);					//分钟
+		    together.setSeconds(0);					//秒前一位
+		    together.setMilliseconds(0);				//秒第二位
+
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
+
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
+
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+</script>
+
+
+<script>
+function Star(id, x, y){
+	this.id = id;
+	this.x = x;
+	this.y = y;
+	this.r = Math.floor(Math.random()*2)+1;
+	var alpha = (Math.floor(Math.random()*10)+1)/10/2;
+	this.color = "rgba(255,255,255,"+alpha+")";
+}
+
+Star.prototype.draw = function() {
+	ctx.fillStyle = this.color;
+	ctx.shadowBlur = this.r * 2;
+	ctx.beginPath();
+	ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+	ctx.closePath();
+	ctx.fill();
+}
+
+Star.prototype.move = function() {
+	this.y -= .15;
+	if (this.y <= -10) this.y = HEIGHT + 10;
+	this.draw();
+}
+
+Star.prototype.die = function() {
+    stars[this.id] = null;
+    delete stars[this.id];
+}
+
+
+var canvas  = document.getElementById('canvas2'),
+	ctx = canvas.getContext('2d'),
+	WIDTH,
+	HEIGHT,
+	mouseMoving = false,
+	mouseMoveChecker,
+	mouseX,
+	mouseY,
+	stars = [],
+	initStarsPopulation = 80,
+
+setCanvasSize();
+init();
+
+function setCanvasSize() {
+	WIDTH = document.documentElement.clientWidth,
+    HEIGHT = document.documentElement.clientHeight;                      
+
+	canvas.setAttribute("width", WIDTH);
+	canvas.setAttribute("height", HEIGHT);
+}
+
+function init() {
+	ctx.strokeStyle = "white";
+	ctx.shadowColor = "white";
+	for (var i = 0; i < initStarsPopulation; i++) {
+		stars[i] = new Star(i, Math.floor(Math.random()*WIDTH), Math.floor(Math.random()*HEIGHT));
+		//stars[i].draw();
+	}
+	ctx.shadowBlur = 0;
+	animate();
+}
+ 
+function animate() {
+    ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+    for (var i in stars) {
+    	stars[i].move();
+    }
+
+    requestAnimationFrame(animate);
+}
+
+window.onmousemove = function(e){
+	mouseMoving = true;
+	mouseX = e.clientX;
+	mouseY = e.clientY;
+	clearInterval(mouseMoveChecker);
+	mouseMoveChecker = setTimeout(function() {
+		mouseMoving = false;
+	}, 100);
+}
+
+</script>
+
+</body></html>
