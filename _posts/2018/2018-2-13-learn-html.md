@@ -33,6 +33,7 @@ tag: Html，笔记
 <a href="https://baidu.com">超链接（指向百度）</a>
 ```
 *代码示例*
+
 ```html
 <!DOCTYPE html><!--表示文档类型是html-->
 <html>
