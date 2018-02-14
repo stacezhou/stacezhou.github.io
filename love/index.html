@@ -111,7 +111,7 @@ background-image:url('http://www.jq22.com/css/img/xkbg.png');
                     猪猪<span class="STYLE1">和</span>猫猫<span class="STYLE1">已经相爱了</span>
                 	<div id="clock"></div>
 		</div>
-                <canvas id="canvas" width="2100" height="680"></canvas>
+                <canvas id="canvas" ></canvas>
 		
 	</div>
 </div>
@@ -237,9 +237,9 @@ background-image:url('http://www.jq22.com/css/img/xkbg.png');
         }));
 
         var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
+            var canvas = tree.canvas;
             while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
+                tree.canvas.clearRect(0, 0, width, height);
                 tree.jump();
                 foot.draw();
                 $await(Jscex.Async.sleep(25));
@@ -289,12 +289,12 @@ function Star(id, x, y){
 }
 
 Star.prototype.draw = function() {
-	ctx.fillStyle = this.color;
-	ctx.shadowBlur = this.r * 2;
-	ctx.beginPath();
-	ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-	ctx.closePath();
-	ctx.fill();
+	canvas.fillStyle = this.color;
+	canvas.shadowBlur = this.r * 2;
+	canvas.beginPath();
+	canvas.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+	canvas.closePath();
+	canvas.fill();
 }
 
 Star.prototype.move = function() {
@@ -309,58 +309,32 @@ Star.prototype.die = function() {
 }
 
 
-var canvas  = document.getElementById('canvas2'),
-	ctx = canvas.getContext('2d'),
-	WIDTH,
-	HEIGHT,
-	mouseMoving = false,
-	mouseMoveChecker,
-	mouseX,
-	mouseY,
+var canvas  = document.getElementById('canvas'),
+	canvas = canvas.getContext('2d'),
 	stars = [],
 	initStarsPopulation = 80,
 
-setCanvasSize();
 init();
 
-function setCanvasSize() {
-	WIDTH = document.documentElement.clientWidth,
-    HEIGHT = document.documentElement.clientHeight;                      
-
-	canvas.setAttribute("width", WIDTH);
-	canvas.setAttribute("height", HEIGHT);
-}
 
 function init() {
-	ctx.strokeStyle = "white";
-	ctx.shadowColor = "white";
+	canvas.strokeStyle = "white";
+	canvas.shadowColor = "white";
 	for (var i = 0; i < initStarsPopulation; i++) {
 		stars[i] = new Star(i, Math.floor(Math.random()*WIDTH), Math.floor(Math.random()*HEIGHT));
 		//stars[i].draw();
 	}
-	ctx.shadowBlur = 0;
+	canvas.shadowBlur = 0;
 	animate();
 }
  
 function animate() {
-    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-
     for (var i in stars) {
     	stars[i].move();
     }
-
-    requestAnimationFrame(animate);
 }
 
-window.onmousemove = function(e){
-	mouseMoving = true;
-	mouseX = e.clientX;
-	mouseY = e.clientY;
-	clearInterval(mouseMoveChecker);
-	mouseMoveChecker = setTimeout(function() {
-		mouseMoving = false;
-	}, 100);
-}
+
 
 </script>
 
